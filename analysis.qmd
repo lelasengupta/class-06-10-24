@@ -1,0 +1,32 @@
+---
+title: "Counties"
+author: "Lela"
+format: html
+---
+
+```{r}
+#| message: false
+#| echo: false
+ 
+library(tidyverse)
+library(readr)
+
+nyc_tracts <- read.csv("data/nyc_tracts.csv")
+
+```
+
+```{r}
+#| echo: false
+#| message: true
+#| warning: false
+
+# Assuming there's a 'borough' column
+  ggplot(nyc_tracts, aes(x = race, y = med_income)) +
+  geom_boxplot(fill = "blue", color = "black") +
+  labs(title = "Median Income by Race in New York City",
+       x = "Race",
+       y = "Median Income")
+
+```
+
+
